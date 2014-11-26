@@ -122,10 +122,10 @@
       "<enter>"
     ],
     "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
-    "disk_size": 10140,
+    "disk_size": 51200,
     "prlctl": [
-      ["set", "{{.Name}}", "--memsize", "512"],
-      ["set", "{{.Name}}", "--cpus", "1"]
+      ["set", "{{.Name}}", "--memsize", "1024"],
+      ["set", "{{.Name}}", "--cpus", "2"]
     ]
   }],
   "provisioners": [{
@@ -148,6 +148,7 @@
       "script/sshd.sh",
       "script/vmtool.sh",
       "script/cmtool.sh",
+      "script/prepare_for_guest_addition.sh",
       "script/minimize.sh",
       "script/cleanup.sh"
     ]
