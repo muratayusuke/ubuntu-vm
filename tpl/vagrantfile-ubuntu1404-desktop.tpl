@@ -2,8 +2,8 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-    config.vm.define "vagrant-ubuntu1204-desktop"
-    config.vm.box = "ubuntu1204-desktop"
+    config.vm.define "vagrant-ubuntu1404-desktop"
+    config.vm.box = "ubuntu1404-desktop"
  
     # Berkshelf
     # config.berkshelf.enabled = true
@@ -32,6 +32,7 @@ Vagrant.configure("2") do |config|
         v.vmx["RemoteDisplay.vnc.enabled"] = "false"
         v.vmx["RemoteDisplay.vnc.port"] = "5900"
         v.vmx["scsi0.virtualDev"] = "lsilogic"
+        v.vmx["mks.enable3d"] = "TRUE"
     end
 
     config.vm.provider :vmware_workstation do |v, override|
@@ -43,5 +44,6 @@ Vagrant.configure("2") do |config|
         v.vmx["RemoteDisplay.vnc.enabled"] = "false"
         v.vmx["RemoteDisplay.vnc.port"] = "5900"
         v.vmx["scsi0.virtualDev"] = "lsilogic"
+        v.vmx["mks.enable3d"] = "TRUE"
     end
 end

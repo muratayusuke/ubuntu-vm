@@ -19,6 +19,9 @@ if [ -d "/var/lib/dhcp" ]; then
     rm /var/lib/dhcp/*
 fi 
 
+# Add delay to prevent "vagrant reload" from failing
+echo "pre-up sleep 2" >> /etc/network/interfaces
+
 echo "==> Cleaning up tmp"
 rm -rf /tmp/*
 
@@ -37,6 +40,11 @@ rm -f /home/vagrant/.bash_history
 
 # Clean up log files
 find /var/log -type f | while read f; do echo -ne '' > $f; done;
+
+echo "==> Clearing last login information"
+>/var/log/lastlog
+>/var/log/wtmp
+>/var/log/btmp
 
 # Whiteout root
 count=$(df --sync -kP / | tail -n1  | awk -F ' ' '{print $4}')
