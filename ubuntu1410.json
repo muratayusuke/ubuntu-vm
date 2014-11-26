@@ -81,10 +81,10 @@
       "initrd=/install/initrd.gz -- <enter>"
     ],
     "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
-    "disk_size": 10140,
+    "disk_size": 51200,
     "vboxmanage": [
-      ["modifyvm", "{{.Name}}", "--memory", "512"],
-      ["modifyvm", "{{.Name}}", "--cpus", "1"]
+      ["modifyvm", "{{.Name}}", "--memory", "1024"],
+      ["modifyvm", "{{.Name}}", "--cpus", "4"]
     ]
   },
   {
