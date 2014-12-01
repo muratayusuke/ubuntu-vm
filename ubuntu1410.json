@@ -63,7 +63,7 @@
     "iso_checksum": "{{ user `iso_checksum` }}",
     "iso_checksum_type": "sha1",
     "guest_os_type": "Ubuntu_64",
-    "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
+    "guest_additions_path": "VBoxGuestAdditions.iso",
     "virtualbox_version_file": ".vbox_version",
     "headless": "{{ user `headless` }}",
     "ssh_username": "vagrant",
@@ -148,7 +148,7 @@
       "script/sshd.sh",
       "script/vmtool.sh",
       "script/cmtool.sh",
-      "script/prepare_for_guest_addition.sh",
+      "script/install_guest_addition.sh",
       "script/minimize.sh",
       "script/cleanup.sh"
     ]
